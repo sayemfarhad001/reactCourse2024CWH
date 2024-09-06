@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 // PROPS 1 : ADD PROPS
 export default function Navbar(props) {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           {props.title}
@@ -33,6 +33,9 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
+          <div className="col-md-6 text-white">          
+            <h4>TEXT ANALYZER</h4>
+          </div>
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"
@@ -40,7 +43,8 @@ export default function Navbar(props) {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
+            {/* success=Green, primary=Blue, danger=Red */}
+            <button className="btn btn-outline-primary" type="submit">
               Search
             </button>
           </form>
