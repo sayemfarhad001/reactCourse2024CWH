@@ -13,6 +13,7 @@ export default function TextForm(props) {
 
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert('Converted to uppercase!', 'success');
     }
 
     const handleLowClick = () => {
@@ -20,20 +21,24 @@ export default function TextForm(props) {
 
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert('Converted to lowercase!', 'success');
     }
 
     const handleClearClick = () => {
         let newText = '';
         setText(newText);
+        props.showAlert('Textarea cleared!', 'warning');
     }
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(text)
+        navigator.clipboard.writeText(text);
+        props.showAlert('Text copied!', 'success');
     }
 
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert('Extra space removed!', 'success');
     }
 
     //State 1 : Declaring a state
